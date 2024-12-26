@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fehler - Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #e74c3c;
+        }
+
+        .error-message {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #c0392b;
+        }
+
+        .hidden-content {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+
+        .animated {
+            animation: spin 1.5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Fehler! Etwas ist schiefgelaufen...</h1>
+        <p class="error-message">Die Webseite hat einen kritischen Fehler erkannt und kann nicht geladen werden!</p>
+        <button class="button" onclick="revealSecret()">Neuladen</button>
+        
+        <div class="hidden-content" id="hidden-content">
+            <p>Du wurdest von Kardin gehackt!!!!!!! 😜</p>
+            <p>Merk dir mein namen. Das ist nur der Anfang!!</p>
+            <img src="https://via.placeholder.com/150" class="animated" alt="Platzhalterbild">
+        </div>
+    </div>
+
+    <script>
+        function revealSecret() {
+            // Versteckten Inhalt anzeigen
+            document.getElementById('hidden-content').style.display = 'block';
+            // "Fehler" nach dem Klick entfernen
+            document.querySelector('.error-message').innerHTML = "Tatsächlich ist alles in Ordnung!";
+            // Den Button ausblenden
+            document.querySelector('.button').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
